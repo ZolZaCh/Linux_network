@@ -297,5 +297,67 @@
 ##### Сохранить дампы образов виртуальных машин 
 
 ![Alt text](./images/Part4_8.png)
+![Alt text](./images/Part4_9.png)
 
 ---
+
+## Part 5. Статическая маршрутизация сети
+
+##### Поднять пять виртуальных машин (3 рабочие станции (ws11, ws21, ws22) и 2 роутера (r1, r2))
+
+![Alt text](./images/Part5_1.png)
+
+#### 5.1. Настройка адресов машин
+##### Настроить конфигурации машин в *etc/netplan/00-installer-config.yaml* согласно сети на рисунке.
+
+![Alt text](./images/Part5_2.png)
+
+- содержание файла *etc/netplan/00-installer-config.yaml* для **ws11**
+
+    ![Alt text](./images/Part5_3.png)
+
+- содержание файла *etc/netplan/00-installer-config.yaml* для **r1**
+
+    ![Alt text](./images/Part5_4.png)
+
+- содержание файла *etc/netplan/00-installer-config.yaml* для **r2**
+
+    ![Alt text](./images/Part5_5.png)
+
+- содержание файла *etc/netplan/00-installer-config.yaml* для **ws21**
+
+    ![Alt text](./images/Part5_6.png)
+
+- содержание файла *etc/netplan/00-installer-config.yaml* для **ws22**
+
+    ![Alt text](./images/Part5_7.png)    
+
+##### Перезапустить сервис сети. Если ошибок нет, то командой `ip -4 a` проверить, что адрес машины задан верно. Также пропинговать ws22 с ws21. Аналогично пропинговать r1 с ws11.
+
+- проверка адреса машины **ws11**
+
+    ![Alt text](./images/Part5_8.png)    
+
+- проверка адреса машины **r1**
+
+    ![Alt text](./images/Part5_9.png) 
+
+- проверка адреса машины **r2**
+
+    ![Alt text](./images/Part5_10.png)    
+
+- проверка адреса машины **ws21**
+
+    ![Alt text](./images/Part5_11.png) 
+
+- проверка адреса машины **ws22**
+
+    ![Alt text](./images/Part5_12.png)     
+
+- пинг **ws22** с **ws21**
+
+    ![Alt text](./images/Part5_13.png)     
+
+- пинг **r1** с **ws11**
+
+    ![Alt text](./images/Part5_14.png)     
